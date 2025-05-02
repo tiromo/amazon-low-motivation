@@ -1,0 +1,46 @@
+/* class */
+.container {
+    font-family: arial;
+    font-size: 24px;
+    margin: 25px;
+    width: 1000px;
+    height: 500px;
+    outline: dashed 1px black;
+    margin: 0 auto;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-image {
+    width: 30%;
+}
+
+.product-item {
+    width: 70%;
+}
+
+/* id */
+#product-image {
+    display: block;
+    margin: 20px auto 0; /* 上マージン20px・左右中央・下0 */
+}
+
+#add-to-cart-btn {
+    margin: 5% 5% 5% 30%;
+}
+
+#back-btn {
+    margin: 5% 30% 5% 5%;
+}
+
+/* text */
+h1 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
