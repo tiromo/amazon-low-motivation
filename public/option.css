@@ -1,0 +1,30 @@
+/* class */
+.container {
+    font-family: arial;
+    font-size: 24px;
+    margin: 25px;
+    width: 1000px;
+    height: 500px;
+    outline: dashed 1px black;
+    margin: 0 auto;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.option-form {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20%;
+}
+
+/* text */
+h1 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}

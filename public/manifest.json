@@ -7,6 +7,7 @@
     "background": {
       "service_worker": "background.js"
     },
+    "options_page": "option.html",
     "content_scripts": [
       {
         "matches": ["*://www.amazon.co.jp/*"],
