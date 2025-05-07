@@ -4,12 +4,12 @@
     font-size: 24px;
     margin: 25px;
     width: 1000px;
-    height: 500px;
+    height: 600px;
     outline: dashed 1px black;
     margin: 0 auto;
 }
 
-.item {
+.some-item {
     display: flex;
     justify-content: space-between;
 }

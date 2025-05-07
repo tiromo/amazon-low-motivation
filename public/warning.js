@@ -41,12 +41,14 @@ window.addEventListener('DOMContentLoaded', () => {
         console.log("items", items);
         const hobby = {'hobbytitle': items[0].title, 'hobbyprice': items[0].price};
         console.log("hobby", hobby);
+        price_num = Number(price.replace(/,/g, "")); 
+        hobby_count = (price_num / hobby.hobbyprice).toFixed(2);
         if(hobby) {
-            const warning = document.createElement('p');
-            warning.textContent = `あなたの趣味は「${hobby.hobbytitle}」で値段は「${hobby.hobbyprice}」です`;
+            const warning = document.getElementById('hobby');
+            warning.textContent = `この商品の値段で「${hobby.hobbytitle}」が「${hobby_count}回」経験できますよ`;
             warning.style.color = 'red';
             warning.style.fontWeight = 'bold';
-            document.querySelector('.container').appendChild(warning);
+            // document.querySelector('.container').appendChild(warning);
         }
     });
 
