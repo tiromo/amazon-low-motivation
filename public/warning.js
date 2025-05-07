@@ -21,6 +21,7 @@ window.addEventListener('DOMContentLoaded', () => {
     
     console.log("url", originUrl)
 
+    // ボタンの挙動
     document.getElementById('back-btn').addEventListener('click', () => {
         window.history.back();
     });
@@ -35,4 +36,18 @@ window.addEventListener('DOMContentLoaded', () => {
             window.history.back();
         }
     });
+
+    chrome.storage.sync.get({ items: []}, ({items}) => {
+        console.log("items", items);
+        const hobby = {'hobbytitle': items[0].title, 'hobbyprice': items[0].price};
+        console.log("hobby", hobby);
+        if(hobby) {
+            const warning = document.createElement('p');
+            warning.textContent = `あなたの趣味は「${hobby.hobbytitle}」で値段は「${hobby.hobbyprice}」です`;
+            warning.style.color = 'red';
+            warning.style.fontWeight = 'bold';
+            document.querySelector('.container').appendChild(warning);
+        }
+    });
+
   });

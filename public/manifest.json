@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Amazon Purchase Interceptor",
     "version": "1.0",
-    "permissions": ["scripting", "tabs"],
+    "permissions": ["scripting", "tabs", "storage"],
     "host_permissions": ["https://www.amazon.co.jp/*"],
     "background": {
       "service_worker": "background.js"
@@ -21,7 +21,6 @@
         {
           "resources": ["warning.html", "warning.js"],
           "matches": ["<all_urls>"]
-        
         }
     ]
 }
