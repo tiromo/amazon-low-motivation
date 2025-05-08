@@ -21,7 +21,23 @@
 .option-item {
     display: flex;
     justify-content: space-between;
-    margin: 10%;
+    margin: 5%;
+}
+
+.option-register {
+    text-align: center;
+    margin: 5%;
+}
+
+/* id */
+#hobby-container {
+    text-align: center;
+    padding: 0 30%;
+}
+
+#hobby-list {
+    outline: solid 1px black;
+    text-align: center;
 }
 
 /* text */
