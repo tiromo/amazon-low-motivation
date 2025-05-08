@@ -22,11 +22,28 @@ window.addEventListener('DOMContentLoaded', () => {
     console.log("url", originUrl)
 
     // ボタンの挙動
-    document.getElementById('back-btn').addEventListener('click', () => {
+    const waitTime = 5; //待機時間
+    let remaining = waitTime;
+
+    const addToCartBtn = document.getElementById('add-to-cart-btn')
+    const backBtn = document.getElementById('back-btn')
+
+    addToCartBtn.disabled = true;
+    const countdown = setInterval(() => {
+        remaining--;
+        addToCartBtn.innerText = `カートに追加\n(${remaining}秒後にクリックできます)`;
+
+        if (remaining < 0) {
+            addToCartBtn.disabled = false;
+            addToCartBtn.textContent = `カートに追加`;
+        }
+    }, 1000)
+
+    backBtn.addEventListener('click', () => {
         window.history.back();
     });
 
-    document.getElementById('add-to-cart-btn').addEventListener('click', () => {
+    addToCartBtn.addEventListener('click', () => {
         if(originUrl) {
             const hasQuery = originUrl.includes('?');
             const separator = hasQuery ? '&' : '?';
@@ -46,8 +63,8 @@ window.addEventListener('DOMContentLoaded', () => {
         if(hobby) {
             const warning = document.getElementById('hobby');
             warning.textContent = `この商品の値段で「${hobby.hobbytitle}」が「${hobby_count}回」経験できますよ`;
-            warning.style.color = 'red';
-            warning.style.fontWeight = 'bold';
+            // warning.style.color = 'red';
+            // warning.style.fontWeight = 'bold';
             // document.querySelector('.container').appendChild(warning);
         }
     });

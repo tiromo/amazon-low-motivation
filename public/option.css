@@ -15,9 +15,13 @@
 }
 
 .option-form {
+    margin: 0 20%;
+}
+
+.option-item {
     display: flex;
     justify-content: space-between;
-    margin: 0 20%;
+    margin: 10%;
 }
 
 /* text */
