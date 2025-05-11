@@ -13,12 +13,15 @@
         <p>例２　題名：銭湯　値段：1500</p>
         <form class="option-form">
           <div class="option-item">
-            <label>題名：<input></label>
-            <label>値段：<input></label>
+            <label>題名：<input name="hobby-title"></label>
+            <label>値段：<input name="hobby-price"></label>
           </div>
           <div class="option-item">
             <input type="file" name="hobby-image" accept="image/jpeg, image/png, image/jpg">
-            <label><input type="checkbox" name="use" id="use-check">使用する</label>
+            <div>
+              <input type="radio" name="use-check" id="use-btn", value="use" checked/><label for="use-btn">使用する</label>
+              <input type="radio" name="use-check" id="unuse-btn", value="unuse"/><label for="unuse-btn">使用しない</label>
+            </div>
           </div>
           <div class="option-register">
             <button id="register-btn">登録</button>
