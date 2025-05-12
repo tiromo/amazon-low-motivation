@@ -26,7 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
         chrome.storage.sync.get({ items: [], Flgindex: []}, (result) => {
             const newItem = { title, price: Number(price), hobbyimage, useFlg: checkFlg};
             const updatedItems = [...result.items, newItem];
-            let newFlg = {Fig: updatedItems.length - 1};
+            let newFlg = {Flg: updatedItems.length - 1};
             console.log(updatedItems);
             console.log(newItem.useFlg);
 
@@ -114,9 +114,9 @@ window.addEventListener('DOMContentLoaded', () => {
     function useBtnFunction(index) {
         console.log("change hobby");
         chrome.storage.sync.get({items: [], Flgindex:[]}, (result) => {
-            const newFlg = {Fig: index};
+            const newFlg = {Flg: index};
             result.items[index].useFlg = true;
-            result.items[result.Flgindex.Fig].useFlg = false;
+            result.items[result.Flgindex.Flg].useFlg = false;
             chrome.storage.sync.set({ items: result.items, Flgindex: newFlg}, () => {
                 renderHobbyList(); //リストを更新
             });

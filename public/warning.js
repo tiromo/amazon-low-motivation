@@ -54,9 +54,12 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    chrome.storage.sync.get({ items: []}, ({items}) => {
-        console.log("items", items);
-        const hobby = {'hobbytitle': items[0].title, 'hobbyprice': items[0].price};
+    chrome.storage.sync.get({ items: [], Flgindex: []}, (result) => {
+        console.log("items", result.items);
+        console.log("Flg", result.Flgindex.Flg);
+        let Flg = result.Flgindex.Flg;
+        console.log("hobby", result.items[Flg]);
+        const hobby = {'hobbytitle': result.items[Flg].title, 'hobbyprice': result.items[Flg].price};
         console.log("hobby", hobby);
         price_num = Number(price.replace(/,/g, "")); 
         hobby_count = (price_num / hobby.hobbyprice).toFixed(2);
