@@ -1,4 +1,5 @@
 // public/warning.js
+
 window.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
     const title = params.get('title') || '（商品名不明）';
