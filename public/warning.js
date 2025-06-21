@@ -14,7 +14,8 @@ window.addEventListener('DOMContentLoaded', () => {
     if (image && img) {
         img.src = image;
         img.alt = title;
-        img.style.maxWidth = '100px'; // サイズ調整
+        img.style.maxWidth = '450px'; // サイズ調整
+        img.style.maxHeight = '100%'; // サイズ調整
         img.style.display = 'block';
         img.style.marginTop = '20px';
         // document.body.appendChild(img);
@@ -27,17 +28,23 @@ window.addEventListener('DOMContentLoaded', () => {
     let remaining = waitTime;
 
     const addToCartBtn = document.getElementById('add-to-cart-btn')
+    const gargeBar = document.getElementById('garge-bar')
     const backBtn = document.getElementById('back-btn')
+    gargeBar.style.width = '0%';
 
     addToCartBtn.disabled = true;
     const countdown = setInterval(() => {
-        remaining--;
-        addToCartBtn.innerText = `カートに追加\n(${remaining}秒後にクリックできます)`;
-
-        if (remaining < 0) {
+        const percent = ((waitTime - remaining + 1) / waitTime) * 100;
+        gargeBar.style.width = `${percent}%`;
+        console.log(gargeBar.style.width);
+        console.log(remaining);
+        if (remaining <= 0) {
+            console.log("time complete")
+            clearInterval(countdown);
             addToCartBtn.disabled = false;
-            addToCartBtn.textContent = `カートに追加`;
+            gargeBar.style.width = '100%';
         }
+        remaining--;E
     }, 1000)
 
     backBtn.addEventListener('click', () => {
